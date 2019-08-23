@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<title>Teste de Estágio</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('app', []);
+			app.controller('countController', function ($scope) {
+				$scope.counter = 0;
+				
+				$scope.addOne = function(){
+					$scope.counter++;
+				}
+
+				$scope.delOne = function(){
+					$scope.counter--;
+				}
+			});
+	</script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	
+</head>
+<body ng-controller="countController">
+	<div class="jumbotron text-center">
+		<h1>Teste de Estágio</h1>
+		<p>Iremos realizar um teste de estágio e iremos acrescentar formulário de upload na página.</p> 
+	</div><br>
+
+	<div class="container">
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs nav-justified">
+			<li class="nav-item">
+		    	<a class="nav-link active" data-toggle="tab" href="#Contador">Contador</a>
+			</li>
+			<li class="nav-item">
+		    	<a class="nav-link" data-toggle="tab" href="#Resultado">Resultado</a>
+			</li>
+		</ul>
+
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div class="tab-pane container active" id="Contador" style="border: 1px solid rgb(230,230,230); border-top: none; padding-top: 20px;">
+				<ul class="nav nav-pills flex-column">
+					<li class="nav-item">
+				    	<a class="nav-link active" href="#" ng-click="addOne()">Adicionar uma unidade ao Contador.</a>
+					</li><br>
+					<li class="nav-item">
+				    	<a class="nav-link" href="#" ng-click="delOne()">Remover uma unidade ao contador.</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tab-pane container fade" id="Resultado" style="border: 1px solid rgb(230,230,230); border-top: none; padding-top: 20px;">
+				<p>Valor do contador: {{counter}}</p>		
+			</div>
+		</div>
+	</div>
+</body>
+</html>
